@@ -5,6 +5,7 @@ import com.snowiware.dangerousdinner.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -30,6 +31,7 @@ public class DangerousDinner implements ModInitializer {
 	private static final ResourceLocation ZOMBIE_HORSE_LOOT = EntityType.ZOMBIE_HORSE.getDefaultLootTable();
 	private static final ResourceLocation GUARDIAN_LOOT = EntityType.GUARDIAN.getDefaultLootTable();
 	private static final ResourceLocation ELDER_GUARDIAN_LOOT = EntityType.ELDER_GUARDIAN.getDefaultLootTable();
+	private static final ResourceLocation SHULKER_LOOT = EntityType.SHULKER.getDefaultLootTable();
 
 
 	@Override
@@ -38,6 +40,8 @@ public class DangerousDinner implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(ModItems::addModdedItemsToFood);
+
+		CompostingChanceRegistry.INSTANCE.add(ModItems.BARE_SHULKER_OYSTER,0.99f);
 
 		// Add to loot tables
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
@@ -101,6 +105,16 @@ public class DangerousDinner implements ModInitializer {
 						.setRolls(ConstantValue.exactly(1))
 						.add(LootItem.lootTableItem(ModItems.RAW_ELDER_GUARDIAN_FILET)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+			}
+			// Shulker oyster
+			if (source.isBuiltin() && SHULKER_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ModItems.RAW_SHULKER_OYSTER)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
 				tableBuilder.pool(poolBuilder.build());
 			}

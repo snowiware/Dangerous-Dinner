@@ -2,6 +2,7 @@ package com.snowiware.dangerousdinner.block.food;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -16,6 +17,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
 
 public class DynamiteCake extends CakeBlock {
     public DynamiteCake(Properties properties) {
@@ -54,7 +57,7 @@ public class DynamiteCake extends CakeBlock {
         }
         player.awardStat(Stats.EAT_CAKE_SLICE);
         // Customize nutrition (hunger) and saturationModifier here
-        player.getFoodData().eat(3, 0.2f);
+        player.getFoodData().eat(5, 0.3f);
 
         int bites = state.getValue(BITES);
         level.gameEvent(player, GameEvent.EAT, pos);
@@ -63,6 +66,11 @@ public class DynamiteCake extends CakeBlock {
         } else {
             level.removeBlock(pos, false);
             level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+        }
+        float explosionChance = 0.001f; // 0.1% chance that you explode
+        RandomSource random = level.getRandom();
+        if (random.nextFloat() < explosionChance) {
+            level.explode(null,player.position().x,player.position().y+1,player.position().z,2.0f, Level.ExplosionInteraction.TNT);
         }
         return InteractionResult.SUCCESS;
     }

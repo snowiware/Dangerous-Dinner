@@ -1,6 +1,7 @@
 package com.snowiware.dangerousdinner.item;
 
 import com.snowiware.dangerousdinner.DangerousDinner;
+import com.snowiware.dangerousdinner.block.ModBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.core.Registry;
@@ -11,6 +12,8 @@ import net.minecraft.world.item.Items;
 
 public class ModItems {
     // register items
+    public static final Item BARE_SHULKER_OYSTER = register(new Item(new FabricItemSettings()),"shulker_oyster_shell");
+    // foods
     public static final Item RAW_SPIDER_CHOP = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_SPIDER_CHOP)),"raw_spider");
     public static final Item COOKED_SPIDER_CHOP = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_SPIDER_CHOP)),"cooked_spider");
     public static final Item RAW_ZOMBIE_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_ZOMBIE_BEEF)),"raw_zombie");
@@ -19,10 +22,17 @@ public class ModItems {
     public static final Item COOKED_GUARDIAN_FILET = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_GUARDIAN_FILET)),"cooked_guardian");
     public static final Item RAW_ELDER_GUARDIAN_FILET = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_ELDER_GUARDIAN_FILET)),"raw_elder_guardian");
     public static final Item COOKED_ELDER_GUARDIAN_FILET = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_ELDER_GUARDIAN_FILET)),"cooked_elder_guardian");
-
+    public static final Item RAW_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().food(ModFoodComponents.RAW_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"raw_shulker");
+    public static final Item COOKED_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().food(ModFoodComponents.COOKED_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"cooked_shulker");
 
     // add to group (food creative tab)
     public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
+        entries.addAfter(Items.SHULKER_SHELL,BARE_SHULKER_OYSTER);
+
+        entries.addAfter(Items.CAKE, ModBlocks.DYNAMITE_CAKE);
+
+        entries.addAfter(Items.SPIDER_EYE,COOKED_SHULKER_OYSTER);
+        entries.addAfter(Items.SPIDER_EYE,RAW_SHULKER_OYSTER);
         entries.addAfter(Items.SPIDER_EYE,COOKED_ELDER_GUARDIAN_FILET);
         entries.addAfter(Items.SPIDER_EYE,RAW_ELDER_GUARDIAN_FILET);
         entries.addAfter(Items.SPIDER_EYE,COOKED_GUARDIAN_FILET);

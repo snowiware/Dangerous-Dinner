@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": "dangerous_dinner:shulker_oyster_shell"
+  },
+  "result": {
+    "id": "minecraft:shulker_shell"
+  }
+}

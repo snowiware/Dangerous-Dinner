@@ -14,5 +14,7 @@ public class ModFoodComponents {
     public static final FoodProperties COOKED_GUARDIAN_FILET = new FoodProperties.Builder().nutrition(7).saturationMod(0.6f).meat().build();
     public static final FoodProperties RAW_ELDER_GUARDIAN_FILET = new FoodProperties.Builder().nutrition(7).saturationMod(.6f).effect(new MobEffectInstance(MobEffects.POISON, 300, 0),0.1f).meat().build();
     public static final FoodProperties COOKED_ELDER_GUARDIAN_FILET = new FoodProperties.Builder().nutrition(10).saturationMod(0.85f).meat().build();
+    public static final FoodProperties RAW_SHULKER_OYSTER = new FoodProperties.Builder().nutrition(5).saturationMod(.25f).fast().meat().build();
+    public static final FoodProperties COOKED_SHULKER_OYSTER = new FoodProperties.Builder().nutrition(5).saturationMod(0.3f).effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0),1.0f).fast().meat().build();
 
 }

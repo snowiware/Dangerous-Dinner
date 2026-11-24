@@ -7,5 +7,8 @@
   "item.dangerous_dinner.raw_guardian": "Raw Guardian Filet",
   "item.dangerous_dinner.cooked_guardian": "Sautéed Guardian Filet",
   "item.dangerous_dinner.raw_elder_guardian": "Raw Elder Guardian Filet",
-  "item.dangerous_dinner.cooked_elder_guardian": "Sautéed Elder Guardian Filet"
+  "item.dangerous_dinner.cooked_elder_guardian": "Sautéed Elder Guardian Filet",
+  "item.dangerous_dinner.raw_shulker": "Shulker Oyster",
+  "item.dangerous_dinner.cooked_shulker": "Roasted Shulker Oyster",
+  "item.dangerous_dinner.shulker_oyster_shell": "Shulker Oyster Shell"
 }
