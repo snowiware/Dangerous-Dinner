@@ -1,6 +1,10 @@
 {
   "item.dangerous_dinner.raw_spider": "Raw Spider Chop",
   "item.dangerous_dinner.cooked_spider": "Cooked Spider Chop",
-  "item.dangerous_dinner.raw_zombie": "Zombie Beef",
-  "item.dangerous_dinner.cooked_zombie": "Zombie Steak"
+  "item.dangerous_dinner.raw_zombie": "Raw Zombie Beef",
+  "item.dangerous_dinner.cooked_zombie": "Zombie Steak",
+  "item.dangerous_dinner.raw_guardian": "Raw Guardian Filet",
+  "item.dangerous_dinner.cooked_guardian": "Sautéed Guardian Filet",
+  "item.dangerous_dinner.raw_elder_guardian": "Raw Elder Guardian Filet",
+  "item.dangerous_dinner.cooked_elder_guardian": "Sautéed Elder Guardian Filet"
 }

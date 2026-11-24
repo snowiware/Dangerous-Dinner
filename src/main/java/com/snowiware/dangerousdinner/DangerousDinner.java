@@ -27,6 +27,9 @@ public class DangerousDinner implements ModInitializer {
 	private static final ResourceLocation ZOMBIE_LOOT = EntityType.ZOMBIE.getDefaultLootTable();
 	private static final ResourceLocation ZOMBIE_VILLAGER_LOOT = EntityType.ZOMBIE_VILLAGER.getDefaultLootTable();
 	private static final ResourceLocation ZOMBIE_HORSE_LOOT = EntityType.ZOMBIE_HORSE.getDefaultLootTable();
+	private static final ResourceLocation GUARDIAN_LOOT = EntityType.GUARDIAN.getDefaultLootTable();
+	private static final ResourceLocation ELDER_GUARDIAN_LOOT = EntityType.ELDER_GUARDIAN.getDefaultLootTable();
+
 
 	@Override
 	public void onInitialize() {
@@ -78,6 +81,24 @@ public class DangerousDinner implements ModInitializer {
 						.setRolls(ConstantValue.exactly(1))
 						.add(LootItem.lootTableItem(ModItems.RAW_ZOMBIE_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+			}
+			// Guardian meat
+			if (source.isBuiltin() && GUARDIAN_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(ModItems.RAW_GUARDIAN_FILET)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+			}
+			// Elder guardian meat
+			if (source.isBuiltin() && ELDER_GUARDIAN_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(ModItems.RAW_ELDER_GUARDIAN_FILET)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f))));
 
 				tableBuilder.pool(poolBuilder.build());
 			}
