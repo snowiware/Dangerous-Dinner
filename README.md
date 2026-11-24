@@ -39,8 +39,13 @@ These items have crafting recipes.
 - **Spice Cookies** ← Substitute *blaze powder* for *wheat* in your cookie recipe.
 
 - **Jelly** ← Craft *slime balls* or *magma cream* with *sugar*. *Magma jelly* gives you a *fire resistance* effect for a few seconds.
-
+  ![Slime jelly crafting recipe](/image/recipe/slime_jelly.png)
+  ![Magma jelly crafting recipe](/image/recipe/magma_jelly.png)
 - **Ghastly Takoyaki** ← Craft *ghast tentacle* with *wheat* and *egg*.
+
+### Other things:
+- Shulker oyster shells can be composted. You can also craft 4 of them together to make a shulker shell.
+  ![Shulker shell](/image/recipe/shulker_shell.png)
 
 LIST IS NOT COMPLETE. MORE RECIPES ARE COMING SOON.
 
