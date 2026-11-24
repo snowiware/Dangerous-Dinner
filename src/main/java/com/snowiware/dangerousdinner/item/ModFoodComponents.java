@@ -22,5 +22,6 @@ public class ModFoodComponents {
     public static final FoodProperties BLOOKIE = new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 160, 0), 1.0f).build();
     public static final FoodProperties RAW_ILLAGER_DRUMSTICK = new FoodProperties.Builder().nutrition(4).saturationMod(.25f).meat().effect(new MobEffectInstance(MobEffects.BAD_OMEN, 12000, 0),0.1f).build();
     public static final FoodProperties COOKED_ILLAGER_DRUMSTICK = new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).meat().build();
-
+    public static final FoodProperties RAW_RAVAGER_BRISKET = new FoodProperties.Builder().nutrition(7).saturationMod(.7f).meat().build();
+    public static final FoodProperties COOKED_RAVAGER_BRISKET = new FoodProperties.Builder().nutrition(10).saturationMod(0.85f).meat().build();
 }

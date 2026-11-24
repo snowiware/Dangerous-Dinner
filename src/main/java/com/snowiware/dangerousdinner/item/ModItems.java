@@ -32,6 +32,8 @@ public class ModItems {
     public static final Item BLOOKIE = register(new Item(new FabricItemSettings().food(ModFoodComponents.BLOOKIE)),"blookie");
     public static final Item RAW_ILLAGER_DRUMSTICK = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_ILLAGER_DRUMSTICK)),"raw_illager");
     public static final Item COOKED_ILLAGER_DRUMSTICK = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_ILLAGER_DRUMSTICK)),"cooked_illager");
+    public static final Item RAW_RAVAGER_BRISKET = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_RAVAGER_BRISKET).rarity(Rarity.UNCOMMON)),"raw_ravager");
+    public static final Item COOKED_RAVAGER_BRISKET = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_RAVAGER_BRISKET).rarity(Rarity.UNCOMMON)),"cooked_ravager");
 
     // add to group (food creative tab)
     public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
@@ -45,6 +47,8 @@ public class ModItems {
         for (Item item : Arrays.asList(
                 COOKED_SHULKER_OYSTER,
                 RAW_SHULKER_OYSTER,
+                COOKED_RAVAGER_BRISKET,
+                RAW_RAVAGER_BRISKET,
                 COOKED_ILLAGER_DRUMSTICK,
                 RAW_ILLAGER_DRUMSTICK,
                 COOKED_ELDER_GUARDIAN_FILET,

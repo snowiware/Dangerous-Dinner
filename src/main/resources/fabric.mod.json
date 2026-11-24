@@ -8,8 +8,9 @@
 		"snowy2go"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/snowiware/Dangerous-Dinner"
+		"homepage": "https://modrinth.com/mod/dangerous-dinner",
+		"sources": "https://github.com/snowiware/Dangerous-Dinner",
+		"issues": "https://github.com/snowiware/Dangerous-Dinner/issues"
 	},
 	"license": "CC-BY-NC-4.0",
 	"icon": "assets/dangerous_dinner/icon.png",
@@ -22,13 +23,7 @@
 			"com.snowiware.dangerousdinner.client.DangerousDinnerClient"
 		]
 	},
-	"mixins": [
-		"dangerousdinner.mixins.json",
-		{
-			"config": "dangerousdinner.client.mixins.json",
-			"environment": "client"
-		}
-	],
+	"mixins": [],
 	"depends": {
 		"fabricloader": ">=0.20.1",
 		"minecraft": "~1.20.1",

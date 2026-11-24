@@ -150,6 +150,22 @@ public class DangerousDinner implements ModInitializer {
 
 				tableBuilder.pool(poolBuilder.build());
 			}
+			// ravager
+			if (source.isBuiltin() && RAVAGER_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(ModItems.RAW_RAVAGER_BRISKET)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
+				LootPool.Builder poolBuilderExtra = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ModItems.RAW_RAVAGER_BRISKET)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+				tableBuilder.pool(poolBuilderExtra.build());
+			}
+
 		});
 
 	}
