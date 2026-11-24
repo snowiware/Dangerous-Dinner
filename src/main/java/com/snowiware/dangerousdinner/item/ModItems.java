@@ -27,10 +27,10 @@ public class ModItems {
         entries.addAfter(Items.SPIDER_EYE,RAW_ELDER_GUARDIAN_FILET);
         entries.addAfter(Items.SPIDER_EYE,COOKED_GUARDIAN_FILET);
         entries.addAfter(Items.SPIDER_EYE,RAW_GUARDIAN_FILET);
-        entries.addAfter(Items.SPIDER_EYE,COOKED_ZOMBIE_BEEF);
-        entries.addAfter(Items.SPIDER_EYE,RAW_ZOMBIE_BEEF);
         entries.addAfter(Items.SPIDER_EYE,COOKED_SPIDER_CHOP);
         entries.addAfter(Items.SPIDER_EYE,RAW_SPIDER_CHOP);
+        entries.addAfter(Items.SPIDER_EYE,COOKED_ZOMBIE_BEEF);
+        entries.addAfter(Items.SPIDER_EYE,RAW_ZOMBIE_BEEF);
     }
 
     public static void registerModItems() {

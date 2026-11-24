@@ -1,5 +1,6 @@
 package com.snowiware.dangerousdinner;
 
+import com.snowiware.dangerousdinner.block.ModBlocks;
 import com.snowiware.dangerousdinner.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -35,6 +36,7 @@ public class DangerousDinner implements ModInitializer {
 	public void onInitialize() {
 		// Register items
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(ModItems::addModdedItemsToFood);
 
 		// Add to loot tables

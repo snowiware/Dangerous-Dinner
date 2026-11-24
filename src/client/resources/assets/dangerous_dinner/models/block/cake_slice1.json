@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "dangerous_dinner:block/cake_side",
+        "bottom": "dangerous_dinner:block/cake_bottom",
+        "top": "dangerous_dinner:block/cake_top",
+        "side": "dangerous_dinner:block/cake_side",
+        "inside": "dangerous_dinner:block/cake_inner"
+    },
+    "elements": [
+        {   "from": [ 3, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}
