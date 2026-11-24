@@ -40,12 +40,12 @@ public class DynamiteCake extends CakeBlock {
 
     protected static InteractionResult eat(Level level, BlockPos pos, BlockState state, Player player) {
         ItemStack mainItem = player.getMainHandItem();
-        if ((mainItem.is(Items.FLINT_AND_STEEL) || mainItem.is(Items.FIRE_CHARGE)) && (!level.isClientSide() && !player.isCreative())) {
+        if ((mainItem.is(Items.FLINT_AND_STEEL) || mainItem.is(Items.FIRE_CHARGE)) && !level.isClientSide()) {
             if (mainItem.is(Items.FLINT_AND_STEEL)) {
                 mainItem.hurtAndBreak(1,player,(entity) -> {
                     entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
                 });
-            } else {
+            } else if (!player.getAbilities().instabuild) {
                 mainItem.grow(-1);
             }
             level.explode(null,pos.getX(),pos.getY(),pos.getZ(),4.0f, Level.ExplosionInteraction.TNT);
@@ -56,7 +56,6 @@ public class DynamiteCake extends CakeBlock {
             return InteractionResult.PASS;
         }
         player.awardStat(Stats.EAT_CAKE_SLICE);
-        // Customize nutrition (hunger) and saturationModifier here
         player.getFoodData().eat(5, 0.3f);
 
         int bites = state.getValue(BITES);

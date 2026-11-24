@@ -11,6 +11,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 
+import java.util.Arrays;
+
 public class ModItems {
     // register items
     public static final Item BARE_SHULKER_OYSTER = register(new Item(new FabricItemSettings()),"shulker_oyster_shell");
@@ -27,27 +29,41 @@ public class ModItems {
     public static final Item COOKED_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().food(ModFoodComponents.COOKED_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"cooked_shulker");
     public static final Item SLIME_JELLY = register(new JellyFoodItem(new FabricItemSettings().food(ModFoodComponents.SLIME_JELLY).stacksTo(16)),"slime_jelly");
     public static final Item MAGMA_JELLY = register(new JellyFoodItem(new FabricItemSettings().food(ModFoodComponents.MAGMA_JELLY).stacksTo(16)),"magma_jelly");
-
+    public static final Item BLOOKIE = register(new Item(new FabricItemSettings().food(ModFoodComponents.BLOOKIE)),"blookie");
+    public static final Item RAW_ILLAGER_DRUMSTICK = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_ILLAGER_DRUMSTICK)),"raw_illager");
+    public static final Item COOKED_ILLAGER_DRUMSTICK = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_ILLAGER_DRUMSTICK)),"cooked_illager");
 
     // add to group (food creative tab)
     public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
+        // oyster shell is not really food. goes after shulker shell
         entries.addAfter(Items.SHULKER_SHELL,BARE_SHULKER_OYSTER);
 
+        // cake item goes after regular cake
         entries.addAfter(Items.CAKE, ModBlocks.DYNAMITE_CAKE);
 
-        entries.addAfter(Items.SPIDER_EYE,COOKED_SHULKER_OYSTER);
-        entries.addAfter(Items.SPIDER_EYE,RAW_SHULKER_OYSTER);
-        entries.addAfter(Items.SPIDER_EYE,COOKED_ELDER_GUARDIAN_FILET);
-        entries.addAfter(Items.SPIDER_EYE,RAW_ELDER_GUARDIAN_FILET);
-        entries.addAfter(Items.SPIDER_EYE,COOKED_GUARDIAN_FILET);
-        entries.addAfter(Items.SPIDER_EYE,RAW_GUARDIAN_FILET);
-        entries.addAfter(Items.SPIDER_EYE,COOKED_SPIDER_CHOP);
-        entries.addAfter(Items.SPIDER_EYE,RAW_SPIDER_CHOP);
-        entries.addAfter(Items.SPIDER_EYE,COOKED_ZOMBIE_BEEF);
-        entries.addAfter(Items.SPIDER_EYE,RAW_ZOMBIE_BEEF);
+        // Meats (all go after spider eye)
+        for (Item item : Arrays.asList(
+                COOKED_SHULKER_OYSTER,
+                RAW_SHULKER_OYSTER,
+                COOKED_ILLAGER_DRUMSTICK,
+                RAW_ILLAGER_DRUMSTICK,
+                COOKED_ELDER_GUARDIAN_FILET,
+                RAW_ELDER_GUARDIAN_FILET,
+                COOKED_GUARDIAN_FILET,
+                RAW_GUARDIAN_FILET,
+                COOKED_SPIDER_CHOP,
+                RAW_SPIDER_CHOP,
+                COOKED_ZOMBIE_BEEF,
+                RAW_ZOMBIE_BEEF)) {
+            entries.addAfter(Items.SPIDER_EYE, item);
+        }
 
+        // jelly items go after honey
         entries.addAfter(Items.HONEY_BOTTLE,MAGMA_JELLY);
         entries.addAfter(Items.HONEY_BOTTLE,SLIME_JELLY);
+
+        // cookie item goes after regular cookie
+        entries.addAfter(Items.COOKIE, BLOOKIE);
     }
 
     public static void registerModItems() {

@@ -24,14 +24,35 @@ public class DangerousDinner implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	// get loot to modify
+
+	/// spiders
 	private static final ResourceLocation SPIDER_LOOT = EntityType.SPIDER.getDefaultLootTable();
 	private static final ResourceLocation CAVE_SPIDER_LOOT = EntityType.CAVE_SPIDER.getDefaultLootTable();
+
+	/// zombies
 	private static final ResourceLocation ZOMBIE_LOOT = EntityType.ZOMBIE.getDefaultLootTable();
 	private static final ResourceLocation ZOMBIE_VILLAGER_LOOT = EntityType.ZOMBIE_VILLAGER.getDefaultLootTable();
 	private static final ResourceLocation ZOMBIE_HORSE_LOOT = EntityType.ZOMBIE_HORSE.getDefaultLootTable();
+	// husk (has its own steak)
+	private static final ResourceLocation HUSK_LOOT = EntityType.HUSK.getDefaultLootTable();
+	// drowned (has its own steak)
+	private static final ResourceLocation DROWNED_LOOT = EntityType.DROWNED.getDefaultLootTable();
+
+	/// guardians
 	private static final ResourceLocation GUARDIAN_LOOT = EntityType.GUARDIAN.getDefaultLootTable();
+	// elder guardian
 	private static final ResourceLocation ELDER_GUARDIAN_LOOT = EntityType.ELDER_GUARDIAN.getDefaultLootTable();
+
+	/// shulker
 	private static final ResourceLocation SHULKER_LOOT = EntityType.SHULKER.getDefaultLootTable();
+
+	/// illagers
+	private static final ResourceLocation PILLAGER_LOOT = EntityType.PILLAGER.getDefaultLootTable();
+	private static final ResourceLocation EVOKER_LOOT = EntityType.EVOKER.getDefaultLootTable();
+	private static final ResourceLocation VINDICATOR_LOOT = EntityType.VINDICATOR.getDefaultLootTable();
+	private static final ResourceLocation ILLUSIONER_LOOT = EntityType.ILLUSIONER.getDefaultLootTable();
+	// ravager (has its own food)
+	private static final ResourceLocation RAVAGER_LOOT = EntityType.RAVAGER.getDefaultLootTable();
 
 
 	@Override
@@ -41,6 +62,7 @@ public class DangerousDinner implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(ModItems::addModdedItemsToFood);
 
+		// Oyster compost (fun fact. crushed oyster shells can be used in your real life compost for calcium)
 		CompostingChanceRegistry.INSTANCE.add(ModItems.BARE_SHULKER_OYSTER,0.99f);
 
 		// Add to loot tables
@@ -115,6 +137,16 @@ public class DangerousDinner implements ModInitializer {
 						.when(LootItemRandomChanceCondition.randomChance(0.5f))
 						.add(LootItem.lootTableItem(ModItems.RAW_SHULKER_OYSTER)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+			}
+			// Illager drumstick (same loot table, so they are stacked with OR)
+			if (source.isBuiltin() && (PILLAGER_LOOT.equals(id) || EVOKER_LOOT.equals(id) || ILLUSIONER_LOOT.equals(id) || VINDICATOR_LOOT.equals(id))) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.8f))
+						.add(LootItem.lootTableItem(ModItems.RAW_ILLAGER_DRUMSTICK)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
 
 				tableBuilder.pool(poolBuilder.build());
 			}
