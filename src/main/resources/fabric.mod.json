@@ -1,18 +1,18 @@
 {
 	"schemaVersion": 1,
-	"id": "dangerousdinner",
+	"id": "dangerous_dinner",
 	"version": "${version}",
 	"name": "Dangerous Dinner",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Dangerous Dinner adds new monster-based foods to Minecraft! Try over 10 new dishes! Please check the mod page for more information.",
 	"authors": [
-		"Me!"
+		"snowy2go"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/snowiware/Dangerous-Dinner"
 	},
-	"license": "All-Rights-Reserved",
-	"icon": "assets/dangerousdinner/icon.png",
+	"license": "CC-BY-NC-4.0",
+	"icon": "assets/dangerous_dinner/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
