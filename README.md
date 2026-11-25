@@ -5,7 +5,7 @@
 ![Dynamite cake crafting and usage](/image/display/dynamitecake.gif)
 
 ## New Foods
-*Dangerous Dinner* adds 11 new types of food!
+*Dangerous Dinner* adds over 10 new types of food!
 - **Zombie Steaks** from Zombies, Husks, and Drowneds
 - **Spider Chop** from Spiders and Cave Spiders
 - **Blookie** from Blazes
@@ -13,7 +13,7 @@
 - **Guardian Filets** from Guardians and Elder Guardians
 - **Ghastly Takoyaki** from Ghasts
 - **Jelly** from Slimes and Magma Cubes
-- **Shulker Oyster** from Shulkers
+- **Shulker Oyster, Shulker Stew** from Shulkers
 - **Illager Drumsticks** from Pillagers, Evokers, Vindicators, and Illusioners
 - **Ravager Brisket** from Ravagers
 - **Warden Ribs** from the Warden
@@ -54,6 +54,10 @@ These items have crafting recipes.
 - **Ghastly Takoyaki** ← Craft *ghast tentacle* with *wheat* and *egg*.
 
 ![Ghastly takoyaki crafting recipe](/image/recipe/ghast_takoyaki.png)
+
+- **Shulker Stew** ← Craft *3 roasted shulker oysters* with a bowl.
+
+![Shulker stew crafting recipe](/image/recipe/shulker_stew.png)
 
 ### Other things:
 - Shulker oyster shells can be composted. You can also craft 4 of them together to make a shulker shell.

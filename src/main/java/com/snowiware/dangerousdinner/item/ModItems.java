@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
@@ -26,8 +27,8 @@ public class ModItems {
     public static final Item COOKED_GUARDIAN_FILET = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_GUARDIAN_FILET)),"cooked_guardian");
     public static final Item RAW_ELDER_GUARDIAN_FILET = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_ELDER_GUARDIAN_FILET).rarity(Rarity.UNCOMMON)),"raw_elder_guardian");
     public static final Item COOKED_ELDER_GUARDIAN_FILET = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_ELDER_GUARDIAN_FILET).rarity(Rarity.UNCOMMON)),"cooked_elder_guardian");
-    public static final Item RAW_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().food(ModFoodComponents.RAW_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"raw_shulker");
-    public static final Item COOKED_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().food(ModFoodComponents.COOKED_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"cooked_shulker");
+    public static final Item RAW_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().craftRemainder(BARE_SHULKER_OYSTER).food(ModFoodComponents.RAW_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"raw_shulker");
+    public static final Item COOKED_SHULKER_OYSTER = register(new ContainerFoodItem(new FabricItemSettings().craftRemainder(BARE_SHULKER_OYSTER).food(ModFoodComponents.COOKED_SHULKER_OYSTER), () -> BARE_SHULKER_OYSTER),"cooked_shulker");
     public static final Item SLIME_JELLY = register(new JellyFoodItem(new FabricItemSettings().food(ModFoodComponents.SLIME_JELLY).stacksTo(16)),"slime_jelly");
     public static final Item MAGMA_JELLY = register(new JellyFoodItem(new FabricItemSettings().food(ModFoodComponents.MAGMA_JELLY).stacksTo(16)),"magma_jelly");
     public static final Item BLOOKIE = register(new Item(new FabricItemSettings().food(ModFoodComponents.BLOOKIE)),"blookie");
@@ -42,17 +43,24 @@ public class ModItems {
     public static final Item COOKED_DROWNED_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_DROWNED_BEEF)),"cooked_drowned");
     public static final Item RAW_WARDEN_RIBS = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_WARDEN_RIBS)),"raw_warden");
     public static final Item COOKED_WARDEN_RIBS = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_WARDEN_RIBS)),"cooked_warden");
+    public static final Item SHULKER_STEW = register(new BowlFoodItem(new FabricItemSettings().food(ModFoodComponents.SHULKER_STEW).stacksTo(1)),"shulker_stew");
 
-    // add to group (food creative tab)
-    public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
+
+    // add to group (ingredients creative tab)
+    public static void addModdedItemsToIngredients(FabricItemGroupEntries entries) {
         // oyster shell is not really food. goes after shulker shell
         entries.addAfter(Items.SHULKER_SHELL,BARE_SHULKER_OYSTER);
 
+        // ghast ingredient
+        entries.addAfter(Items.GHAST_TEAR,GHAST_TENTACLE);
+    }
+
+    // add to group (food creative tab)
+    public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
         // cake item goes after regular cake
         entries.addAfter(Items.CAKE, ModBlocks.DYNAMITE_CAKE);
 
-        // ghast ingredient
-        entries.addAfter(Items.GHAST_TEAR,GHAST_TENTACLE);
+        entries.addAfter(Items.RABBIT_STEW, SHULKER_STEW);
 
         // Meats (all go after spider eye)
         for (Item item : Arrays.asList(

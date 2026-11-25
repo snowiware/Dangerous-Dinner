@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dangerous_dinner:cooked_shulker"
+    },
+    {
+      "item": "dangerous_dinner:cooked_shulker"
+    },
+    {
+      "item": "dangerous_dinner:cooked_shulker"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "dangerous_dinner:shulker_stew"
+  }
+}

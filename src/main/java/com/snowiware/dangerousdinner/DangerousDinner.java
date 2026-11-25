@@ -65,6 +65,7 @@ public class DangerousDinner implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks(ConfigManager.load().enableEasterEggs);
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(ModItems::addModdedItemsToFood);
+		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(ModItems::addModdedItemsToIngredients);
 
 		// Oyster compost (fun fact. crushed oyster shells can be used in your real life compost for calcium)
 		CompostingChanceRegistry.INSTANCE.add(ModItems.BARE_SHULKER_OYSTER,0.99f);
@@ -103,7 +104,7 @@ public class DangerousDinner implements ModInitializer {
 			if (source.isBuiltin() && ZOMBIE_VILLAGER_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
-						.when(LootItemRandomChanceCondition.randomChance(0.35dxf))
+						.when(LootItemRandomChanceCondition.randomChance(0.35f))
 						.add(LootItem.lootTableItem(ModItems.RAW_ZOMBIE_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
