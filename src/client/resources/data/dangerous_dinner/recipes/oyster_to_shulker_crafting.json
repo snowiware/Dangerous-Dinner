@@ -5,9 +5,11 @@
     "##"
   ],
   "key": {
-    "#": "dangerous_dinner:shulker_oyster_shell"
+    "#": {
+      "item": "dangerous_dinner:shulker_oyster_shell"
+    }
   },
   "result": {
-    "id": "minecraft:shulker_shell"
+    "item": "minecraft:shulker_shell"
   }
 }

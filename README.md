@@ -18,6 +18,8 @@
 - **Ravager Brisket** from Ravagers
 - **Warden Ribs** from the Warden
 
+![Picture of all items](image/layout/v1.png)
+
 ## How to Make
 First of all, you may be pondering the reasons behind this mod. I thought that killing monsters should be more fulfilling. Some monsters (such as Pillagers) rarely drop anything. This is bad, because Pillagers are annoying. Therefore, I now gain a reward for killing them 😊
 

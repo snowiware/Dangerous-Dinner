@@ -25,5 +25,6 @@
   "item.dangerous_dinner.raw_husk": "Raw Husk Beef",
   "item.dangerous_dinner.cooked_husk": "Husk Steak",
   "item.dangerous_dinner.raw_warden": "Raw Warden Ribs",
-  "item.dangerous_dinner.cooked_warden": "Sautéed Warden Ribs"
+  "item.dangerous_dinner.cooked_warden": "Sautéed Warden Ribs",
+  "block.dangerous_dinner.retro_block": "Retro Block"
 }

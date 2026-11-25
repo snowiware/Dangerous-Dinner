@@ -1,6 +1,7 @@
 package com.snowiware.dangerousdinner;
 
 import com.snowiware.dangerousdinner.block.ModBlocks;
+import com.snowiware.dangerousdinner.config.ConfigManager;
 import com.snowiware.dangerousdinner.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -9,7 +10,6 @@ import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
@@ -59,13 +59,11 @@ public class DangerousDinner implements ModInitializer {
 
 	/// warden
 	private static final ResourceLocation WARDEN_LOOT = EntityType.WARDEN.getDefaultLootTable();
-
-
 	@Override
 	public void onInitialize() {
 		// Register items
 		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+		ModBlocks.registerModBlocks(ConfigManager.load().enableEasterEggs);
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(ModItems::addModdedItemsToFood);
 
 		// Oyster compost (fun fact. crushed oyster shells can be used in your real life compost for calcium)

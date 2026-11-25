@@ -6,6 +6,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -22,8 +23,15 @@ public class ModBlocks {
                     .noOcclusion()),
             1);
 
-    public static void registerModBlocks() {
+    public static final Block EGG_RETRO = new Block(BlockBehaviour.Properties.of().mapColor(DyeColor.RED).sound(SoundType.AMETHYST).strength(4.0f));
+
+    public static void registerModBlocks(boolean eggs) {
         DangerousDinner.LOGGER.info("Registering blocks for " + DangerousDinner.MOD_ID + ".");
+
+        // if easter eggs are enabled:
+        if (eggs) {
+            registerBlock("retro_block", EGG_RETRO);
+        }
     }
 
     private static Block registerBlock(String name, Block block) {
