@@ -23,13 +23,14 @@ public class ModBlocks {
                     .noOcclusion()),
             1);
 
-    public static final Block EGG_RETRO = new Block(BlockBehaviour.Properties.of().mapColor(DyeColor.RED).sound(SoundType.AMETHYST).strength(4.0f));
+    public static Block EGG_RETRO = null;
 
     public static void registerModBlocks(boolean eggs) {
         DangerousDinner.LOGGER.info("Registering blocks for " + DangerousDinner.MOD_ID + ".");
 
         // if easter eggs are enabled:
         if (eggs) {
+            EGG_RETRO = new Block(BlockBehaviour.Properties.of().mapColor(DyeColor.RED).sound(SoundType.AMETHYST).strength(4.0f));
             registerBlock("retro_block", EGG_RETRO);
         }
     }

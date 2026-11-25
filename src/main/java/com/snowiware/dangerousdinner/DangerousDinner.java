@@ -75,15 +75,16 @@ public class DangerousDinner implements ModInitializer {
 			if (source.isBuiltin() && SPIDER_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.75f))
 						.add(LootItem.lootTableItem(ModItems.RAW_SPIDER_CHOP)
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0f, 3.0f))));
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0f, 2.0f))));
 
 				tableBuilder.pool(poolBuilder.build());
 			}
 			if (source.isBuiltin() && CAVE_SPIDER_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
-						.when(LootItemRandomChanceCondition.randomChance(0.75f))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
 						.add(LootItem.lootTableItem(ModItems.RAW_SPIDER_CHOP)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
@@ -93,7 +94,7 @@ public class DangerousDinner implements ModInitializer {
 			if (source.isBuiltin() && ZOMBIE_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
-						.when(LootItemRandomChanceCondition.randomChance(0.75f))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
 						.add(LootItem.lootTableItem(ModItems.RAW_ZOMBIE_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
@@ -102,7 +103,7 @@ public class DangerousDinner implements ModInitializer {
 			if (source.isBuiltin() && ZOMBIE_VILLAGER_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
-						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.when(LootItemRandomChanceCondition.randomChance(0.35dxf))
 						.add(LootItem.lootTableItem(ModItems.RAW_ZOMBIE_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
@@ -120,7 +121,7 @@ public class DangerousDinner implements ModInitializer {
 			if (source.isBuiltin() && HUSK_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
-						.when(LootItemRandomChanceCondition.randomChance(0.75f))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
 						.add(LootItem.lootTableItem(ModItems.RAW_HUSK_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
@@ -130,7 +131,7 @@ public class DangerousDinner implements ModInitializer {
 			if (source.isBuiltin() && DROWNED_LOOT.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1))
-						.when(LootItemRandomChanceCondition.randomChance(0.75f))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
 						.add(LootItem.lootTableItem(ModItems.RAW_DROWNED_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
