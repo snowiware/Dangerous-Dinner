@@ -27,6 +27,7 @@ Some monsters drop raw meat directly, while others can be used in crafting recip
 These items can be cooked in a furnace, smoker, or campfire.
 - **Zombie Steak** ← Raw Zombie Beef. *Zombie Beef is dropped upon killing Zombies, Zombie Villagers, or Zombie Horses.*
 - **Husk Steak** ← Raw Husk Beef. *Husk Beef is dropped upon killing Husks.*
+- **Drowned Steak** ← Raw Drowned Beef. *Drowned Beef is dropped upon killing Drowneds.*
 - **Cooked Spider Chop** ← Raw Spider Chop. *Spider Chops are dropped upon killing Spiders or Cave Spiders.*
 - **Sautéed (Elder) Guardian Filet** ← Raw (Elder) Guardian Filet. *Guardian Filets are dropped by Guardians, with a rarer Elder Guardian Filet dropped by Elder Guardians upon death.*
 - **Illager Drumsticks** ← Raw Illager Meat. *Pillager meat drops from Pillagers, Evokers, Vindicators, and Illusioners upon death.*
@@ -49,6 +50,8 @@ These items have crafting recipes.
 ![Slime and magma jelly crafting recipe](/image/recipe/jelly.gif)
 
 - **Ghastly Takoyaki** ← Craft *ghast tentacle* with *wheat* and *egg*.
+
+![Ghastly takoyaki crafting recipe](/image/recipe/ghast_takoyaki.png)
 
 ### Other things:
 - Shulker oyster shells can be composted. You can also craft 4 of them together to make a shulker shell.

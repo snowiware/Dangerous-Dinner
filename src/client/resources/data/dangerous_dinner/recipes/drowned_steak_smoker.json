@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "dangerous_dinner:raw_drowned"
+  },
+  "result": "dangerous_dinner:cooked_drowned"
+}

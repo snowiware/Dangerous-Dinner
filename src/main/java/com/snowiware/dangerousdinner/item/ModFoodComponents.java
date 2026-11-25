@@ -24,4 +24,9 @@ public class ModFoodComponents {
     public static final FoodProperties COOKED_ILLAGER_DRUMSTICK = new FoodProperties.Builder().nutrition(8).saturationMod(0.8f).meat().build();
     public static final FoodProperties RAW_RAVAGER_BRISKET = new FoodProperties.Builder().nutrition(7).saturationMod(.7f).meat().build();
     public static final FoodProperties COOKED_RAVAGER_BRISKET = new FoodProperties.Builder().nutrition(10).saturationMod(0.85f).meat().build();
+    public static final FoodProperties GHASTLY_TAKOYAKI = new FoodProperties.Builder().nutrition(3).saturationMod(0.3f).fast().meat().build();
+    public static final FoodProperties RAW_HUSK_BEEF = new FoodProperties.Builder().nutrition(3).saturationMod(.2f).meat().effect(new MobEffectInstance(MobEffects.HUNGER, 600, 0),0.6f).build();
+    public static final FoodProperties COOKED_HUSK_BEEF = new FoodProperties.Builder().nutrition(7).saturationMod(0.63f).meat().build();
+    public static final FoodProperties RAW_DROWNED_BEEF = new FoodProperties.Builder().nutrition(5).saturationMod(.32f).meat().effect(new MobEffectInstance(MobEffects.HUNGER, 600, 0),0.2f).build();
+    public static final FoodProperties COOKED_DROWNED_BEEF = new FoodProperties.Builder().nutrition(8).saturationMod(0.72f).effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0),1.0f).meat().build();
 }

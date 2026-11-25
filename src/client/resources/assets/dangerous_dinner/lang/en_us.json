@@ -17,5 +17,11 @@
   "item.dangerous_dinner.raw_illager": "Raw Illager Drumstick",
   "item.dangerous_dinner.cooked_illager": "Cooked Illager Drumstick",
   "item.dangerous_dinner.raw_ravager": "Raw Ravager Brisket",
-  "item.dangerous_dinner.cooked_ravager": "Cooked Ravager Brisket"
+  "item.dangerous_dinner.cooked_ravager": "Cooked Ravager Brisket",
+  "item.dangerous_dinner.ghast_tentacle": "Ghast Tentacle",
+  "item.dangerous_dinner.ghast_takoyaki": "Ghastly Takoyaki",
+  "item.dangerous_dinner.raw_drowned": "Raw Drowned Beef",
+  "item.dangerous_dinner.cooked_drowned": "Drowned Steak",
+  "item.dangerous_dinner.raw_husk": "Raw Husk Beef",
+  "item.dangerous_dinner.cooked_husk": "Husk Steak"
 }

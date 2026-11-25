@@ -16,6 +16,7 @@ import java.util.Arrays;
 public class ModItems {
     // register items
     public static final Item BARE_SHULKER_OYSTER = register(new Item(new FabricItemSettings()),"shulker_oyster_shell");
+    public static final Item GHAST_TENTACLE = register(new Item(new FabricItemSettings()),"ghast_tentacle");
     // foods
     public static final Item RAW_SPIDER_CHOP = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_SPIDER_CHOP)),"raw_spider");
     public static final Item COOKED_SPIDER_CHOP = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_SPIDER_CHOP)),"cooked_spider");
@@ -34,6 +35,11 @@ public class ModItems {
     public static final Item COOKED_ILLAGER_DRUMSTICK = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_ILLAGER_DRUMSTICK)),"cooked_illager");
     public static final Item RAW_RAVAGER_BRISKET = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_RAVAGER_BRISKET).rarity(Rarity.UNCOMMON)),"raw_ravager");
     public static final Item COOKED_RAVAGER_BRISKET = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_RAVAGER_BRISKET).rarity(Rarity.UNCOMMON)),"cooked_ravager");
+    public static final Item GHASTLY_TAKOYAKI = register(new Item(new FabricItemSettings().food(ModFoodComponents.GHASTLY_TAKOYAKI)),"ghast_takoyaki");
+    public static final Item RAW_HUSK_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_HUSK_BEEF)),"raw_husk");
+    public static final Item COOKED_HUSK_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_HUSK_BEEF)),"cooked_husk");
+    public static final Item RAW_DROWNED_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_DROWNED_BEEF)),"raw_drowned");
+    public static final Item COOKED_DROWNED_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_DROWNED_BEEF)),"cooked_drowned");
 
     // add to group (food creative tab)
     public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
@@ -43,8 +49,12 @@ public class ModItems {
         // cake item goes after regular cake
         entries.addAfter(Items.CAKE, ModBlocks.DYNAMITE_CAKE);
 
+        // ghast ingredient
+        entries.addAfter(Items.GHAST_TEAR,GHAST_TENTACLE);
+
         // Meats (all go after spider eye)
         for (Item item : Arrays.asList(
+                GHASTLY_TAKOYAKI,
                 COOKED_SHULKER_OYSTER,
                 RAW_SHULKER_OYSTER,
                 COOKED_RAVAGER_BRISKET,
@@ -57,6 +67,10 @@ public class ModItems {
                 RAW_GUARDIAN_FILET,
                 COOKED_SPIDER_CHOP,
                 RAW_SPIDER_CHOP,
+                COOKED_DROWNED_BEEF,
+                RAW_DROWNED_BEEF,
+                COOKED_HUSK_BEEF,
+                RAW_HUSK_BEEF,
                 COOKED_ZOMBIE_BEEF,
                 RAW_ZOMBIE_BEEF)) {
             entries.addAfter(Items.SPIDER_EYE, item);

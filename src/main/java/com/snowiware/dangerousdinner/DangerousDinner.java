@@ -54,6 +54,9 @@ public class DangerousDinner implements ModInitializer {
 	// ravager (has its own food)
 	private static final ResourceLocation RAVAGER_LOOT = EntityType.RAVAGER.getDefaultLootTable();
 
+	/// ghast
+	private static final ResourceLocation GHAST_LOOT = EntityType.GHAST.getDefaultLootTable();
+
 
 	@Override
 	public void onInitialize() {
@@ -165,7 +168,28 @@ public class DangerousDinner implements ModInitializer {
 				tableBuilder.pool(poolBuilder.build());
 				tableBuilder.pool(poolBuilderExtra.build());
 			}
+			// ghast (they have 9 tentacles so up to 9 on a very rare drop)
+			if (source.isBuiltin() && GHAST_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(ModItems.GHAST_TENTACLE)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f))));
+				LootPool.Builder poolBuilderExtra = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ModItems.GHAST_TENTACLE)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f))));
+				LootPool.Builder poolBuilderRare = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.05f))
+						.add(LootItem.lootTableItem(ModItems.GHAST_TENTACLE)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f))));
 
+
+				tableBuilder.pool(poolBuilder.build());
+				tableBuilder.pool(poolBuilderExtra.build());
+				tableBuilder.pool(poolBuilderRare.build());
+			}
 		});
 
 	}
