@@ -23,5 +23,7 @@
   "item.dangerous_dinner.raw_drowned": "Raw Drowned Beef",
   "item.dangerous_dinner.cooked_drowned": "Drowned Steak",
   "item.dangerous_dinner.raw_husk": "Raw Husk Beef",
-  "item.dangerous_dinner.cooked_husk": "Husk Steak"
+  "item.dangerous_dinner.cooked_husk": "Husk Steak",
+  "item.dangerous_dinner.raw_warden": "Raw Warden Ribs",
+  "item.dangerous_dinner.cooked_warden": "Sautéed Warden Ribs"
 }

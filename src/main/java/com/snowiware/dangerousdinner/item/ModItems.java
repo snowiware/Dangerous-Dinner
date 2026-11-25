@@ -40,6 +40,8 @@ public class ModItems {
     public static final Item COOKED_HUSK_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_HUSK_BEEF)),"cooked_husk");
     public static final Item RAW_DROWNED_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_DROWNED_BEEF)),"raw_drowned");
     public static final Item COOKED_DROWNED_BEEF = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_DROWNED_BEEF)),"cooked_drowned");
+    public static final Item RAW_WARDEN_RIBS = register(new Item(new FabricItemSettings().food(ModFoodComponents.RAW_WARDEN_RIBS)),"raw_warden");
+    public static final Item COOKED_WARDEN_RIBS = register(new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_WARDEN_RIBS)),"cooked_warden");
 
     // add to group (food creative tab)
     public static void addModdedItemsToFood(FabricItemGroupEntries entries) {
@@ -57,6 +59,8 @@ public class ModItems {
                 GHASTLY_TAKOYAKI,
                 COOKED_SHULKER_OYSTER,
                 RAW_SHULKER_OYSTER,
+                COOKED_WARDEN_RIBS,
+                RAW_WARDEN_RIBS,
                 COOKED_RAVAGER_BRISKET,
                 RAW_RAVAGER_BRISKET,
                 COOKED_ILLAGER_DRUMSTICK,

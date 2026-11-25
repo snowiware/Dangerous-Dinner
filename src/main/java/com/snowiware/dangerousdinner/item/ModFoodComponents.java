@@ -29,4 +29,6 @@ public class ModFoodComponents {
     public static final FoodProperties COOKED_HUSK_BEEF = new FoodProperties.Builder().nutrition(7).saturationMod(0.63f).meat().build();
     public static final FoodProperties RAW_DROWNED_BEEF = new FoodProperties.Builder().nutrition(5).saturationMod(.32f).meat().effect(new MobEffectInstance(MobEffects.HUNGER, 600, 0),0.2f).build();
     public static final FoodProperties COOKED_DROWNED_BEEF = new FoodProperties.Builder().nutrition(8).saturationMod(0.72f).effect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0),1.0f).meat().build();
+    public static final FoodProperties RAW_WARDEN_RIBS = new FoodProperties.Builder().nutrition(10).saturationMod(0.78f).effect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0),1.0f).meat().build();
+    public static final FoodProperties COOKED_WARDEN_RIBS = new FoodProperties.Builder().nutrition(12).saturationMod(0.93f).meat().build();
 }

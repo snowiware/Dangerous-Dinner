@@ -57,6 +57,9 @@ public class DangerousDinner implements ModInitializer {
 	/// ghast
 	private static final ResourceLocation GHAST_LOOT = EntityType.GHAST.getDefaultLootTable();
 
+	/// warden
+	private static final ResourceLocation WARDEN_LOOT = EntityType.WARDEN.getDefaultLootTable();
+
 
 	@Override
 	public void onInitialize() {
@@ -112,6 +115,26 @@ public class DangerousDinner implements ModInitializer {
 						.setRolls(ConstantValue.exactly(1))
 						.add(LootItem.lootTableItem(ModItems.RAW_ZOMBIE_BEEF)
 								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+			}
+			// husk
+			if (source.isBuiltin() && HUSK_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.75f))
+						.add(LootItem.lootTableItem(ModItems.RAW_HUSK_BEEF)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+			}
+			// drowned
+			if (source.isBuiltin() && DROWNED_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.75f))
+						.add(LootItem.lootTableItem(ModItems.RAW_DROWNED_BEEF)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 1.0f))));
 
 				tableBuilder.pool(poolBuilder.build());
 			}
@@ -189,6 +212,21 @@ public class DangerousDinner implements ModInitializer {
 				tableBuilder.pool(poolBuilder.build());
 				tableBuilder.pool(poolBuilderExtra.build());
 				tableBuilder.pool(poolBuilderRare.build());
+			}
+			// warden
+			if (source.isBuiltin() && WARDEN_LOOT.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.add(LootItem.lootTableItem(ModItems.RAW_WARDEN_RIBS)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f))));
+				LootPool.Builder poolBuilderExtra = LootPool.lootPool()
+						.setRolls(ConstantValue.exactly(1))
+						.when(LootItemRandomChanceCondition.randomChance(0.5f))
+						.add(LootItem.lootTableItem(ModItems.RAW_WARDEN_RIBS)
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f))));
+
+				tableBuilder.pool(poolBuilder.build());
+				tableBuilder.pool(poolBuilderExtra.build());
 			}
 		});
 
